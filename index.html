@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenAPI Specification</title>
+</head>
+<body>
+  <pre id="openapi-spec"></pre>
+
+  <script>
+    // Load the OpenAPI specification JSON
+    const openapiSpec = {
+      "openapi":"3.0.1",
+      "info":{
+        "title":"OpenAPI definition",
+        "version":"v0"
+      },
+      "servers":[
+        {
+          "url":"http://provideapi-backend.haslab-dataspace.pt:8080",
+          "description":"Generated server url"
+        }
+      ],
+      "paths":{
+        "/":{
+          "get":{
+            "tags":["hello-world-controller"],
+            "operationId":"helloWorld",
+            "responses":{
+              "200":{
+                "description":"OK",
+                "content":{
+                  "*/*":{
+                    "schema":{
+                      "type":"string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "put":{
+            "tags":["hello-world-controller"],
+            "operationId":"helloWorld_2",
+            "responses":{
+              "200":{
+                "description":"OK",
+                "content":{
+                  "*/*":{
+                    "schema":{
+                      "type":"string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "post":{
+            "tags":["hello-world-controller"],
+            "operationId":"helloWorldPost_1",
+            "requestBody":{
+              "content":{
+                "application/json":{
+                  "schema":{
+                    "$ref":"#/components/schemas/MessageRequest"
+                  }
+                }
+              },
+              "required":true
+            },
+            "responses":{
+              "200":{
+                "description":"OK",
+                "content":{
+                  "*/*":{
+                    "schema":{
+                      "type":"string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "delete":{
+            "tags":["hello-world-controller"],
+            "operationId":"helloWorld_4",
+            "responses":{
+              "200":{
+                "description":"OK",
+                "content":{
+                  "*/*":{
+                    "schema":{
+                      "type":"string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "options":{
+            "tags":["hello-world-controller"],
+            "operationId":"helloWorld_5",
+            "responses":{
+              "200":{
+                "description":"OK",
+                "content":{
+                  "*/*":{
+                    "schema":{
+                      "type":"string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "head":{
+            "tags":["hello-world-controller"],
+            "operationId":"helloWorld_1",
+            "responses":{
+              "200":{
+                "description":"OK",
+                "content":{
+                  "*/*":{
+                    "schema":{
+                      "type":"string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "patch":{
+            "tags":["hello-world-controller"],
+            "operationId":"helloWorld_3",
+            "responses":{
+              "200":{
+                "description":"OK",
+                "content":{
+                  "*/*":{
+                    "schema":{
+                      "type":"string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "components":{
+        "schemas":{
+          "MessageRequest":{
+            "type":"object",
+            "properties":{
+              "message":{
+                "type":"string"
+              }
+            }
+          }
+        }
+      }
+    };
+
+    // Display the OpenAPI specification JSON
+    document.getElementById('openapi-spec').textContent = JSON.stringify(openapiSpec, null, 2);
+  </script>
+</body>
+</html>
